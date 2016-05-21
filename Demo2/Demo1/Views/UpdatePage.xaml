@@ -1,0 +1,33 @@
+﻿<prismMvvm:SessionStateAwarePage
+	x:Class="Demo1.Views.UpdatePage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:Demo1.Views"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:prismMvvm="using:Prism.Windows.Mvvm"
+	prismMvvm:ViewModelLocator.AutoWireViewModel="True"
+	mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<StackPanel Orientation="Vertical" Margin="10">
+			<TextBlock Text="Id" />
+			<TextBox Text="{Binding Path=Id}" IsReadOnly="True" />
+			<TextBlock Text="Headline" Margin="0,5,0,0" />
+			<TextBox Text="{Binding Headline,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+			<TextBlock Text="Assigned To" Margin="0,5,0,0" />
+			<TextBox Text="{Binding AssignedTo,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+			<TextBlock Text="Created On" Margin="0,5,0,0" />
+			<DatePicker Date="{Binding CreateDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="False" />
+			<TextBlock Text="Due Date" Margin="0,5,0,0" />
+			<DatePicker Date="{Binding DueDate,Mode=TwoWay}" />
+			<CheckBox Content="Is Complete" IsChecked="{Binding IsComplete,Mode=TwoWay}" Margin="0,5,0,0" />
+			<TextBlock Text="Description" Margin="0,5,0,0" />
+			<TextBox Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+					 TextWrapping="Wrap"  Height="100" />
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+				<Button Content="Save" Command="{Binding CommandSave}" Width="80" Height="35" Margin="0,0,0,0" />
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</prismMvvm:SessionStateAwarePage>

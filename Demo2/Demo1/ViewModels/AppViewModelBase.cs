@@ -47,16 +47,16 @@ namespace Demo1.ViewModels
 		}
 
 
-		//private Messages.UpdateNavigationMessage _updateNavigationMessage = null;
+		private Messages.UpdateNavigationMessage _updateNavigationMessage = null;
 
-		//public override void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
-		//{
-		//	base.OnNavigatedTo(e, viewModelState);
-		//	string pageToken = e.SourcePageType.Name;
-		//	pageToken = pageToken.Substring(0, pageToken.Length - ("Page").Length);
-		//	if (_updateNavigationMessage == null)
-		//		_updateNavigationMessage = MessageBus.GetEvent<Messages.UpdateNavigationMessage>();
-		//	_updateNavigationMessage.Publish(pageToken);
-		//}
+		public override void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
+		{
+			base.OnNavigatedTo(e, viewModelState);
+			string pageToken = e.SourcePageType.Name;
+			pageToken = pageToken.Substring(0, pageToken.Length - ("Page").Length);
+			if (_updateNavigationMessage == null)
+				_updateNavigationMessage = MessageBus.GetEvent<Messages.UpdateNavigationMessage>();
+			_updateNavigationMessage.Publish(pageToken);
+		}
 	}
 }

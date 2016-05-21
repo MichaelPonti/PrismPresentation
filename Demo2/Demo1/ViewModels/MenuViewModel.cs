@@ -123,11 +123,8 @@ namespace Demo1.ViewModels
 
 		private void UpdateButtonStatus(string pageToken)
 		{
-			if (_currentPageToken != pageToken)
-			{
-				_currentPageToken = pageToken;
-				RaiseCanExecuteChanged();
-			}
+			_currentPageToken = pageToken;
+			RaiseCanExecuteChanged();
 		}
 	}
 }
