@@ -14,9 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Practices.Unity;
 
-namespace Demo1
+namespace App1
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
